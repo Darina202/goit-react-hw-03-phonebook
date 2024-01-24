@@ -19,7 +19,7 @@ class Phonebook extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     const { contacts } = this.state;
-    if (prevState.contacts.length === contacts.length) {
+    if (prevState.contacts.length !== contacts.length) {
       localStorage.setItem('tel-numbers', JSON.stringify(this.state.contacts));
     }
   }
